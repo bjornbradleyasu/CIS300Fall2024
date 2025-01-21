@@ -1,0 +1,274 @@
+/* Global styles */
+
+* { box-sizing: border-box; }
+
+body {
+    background-color: #EAEAEA;
+    color: #555555;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Wrapper styles */
+#wrapper {
+    background-color: #90C7E3;
+    background: linear-gradient(to bottom, #FFFFFF, #90C7E3);
+}
+
+/* Header styles */
+header {
+    background-color: #002171;
+    color: #FFFFFF;
+    letter-spacing: 0.25em;
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:link {
+    color:#FFFFFF
+}
+
+header a:visited {
+    color: #FFFFFF;
+}
+
+header a:hover {
+    color: #90C7E3
+}
+
+nav {
+    width: 160px;
+    font-weight: bold;
+    padding: 1.5em;
+    font-size: 120%;
+    display: block;
+    text-align: left;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    font-size: 1.2em;
+    display: block;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: #5c7fa3;
+    transition: color 3s ease-out;
+}
+
+nav a:link {
+    color: #5c7fa3;
+}
+
+nav a:visited {
+    color: #344873;
+    transition: color 3s ease-out;
+}
+
+nav a:hover {
+    color: #a52a2a;
+    transition: color 3s ease-out;
+}
+
+video {
+    float: right;
+    margin: 1em;
+}
+
+main {
+    background-color: #FFFFFF;
+    margin-left: 190px;
+    padding: 1px 20px 20px 30px;
+    display:block;
+    overflow: auto;
+}
+section {
+    width:33%;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+h2 {
+    color: #1976d2;
+    text-shadow: 1px 1px #cccccc;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+h3 {
+    color: #000033;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+main ul {
+    list-style-image: url(marker.gif);
+}
+
+dt {
+    color: #002171;
+}
+
+footer {
+    margin-left: 190px;
+    background-color: #FFFFFF;
+    font-size: 75%;
+    font-style: italic;
+    text-align: center;
+    padding: 2em;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.resort {
+    color: #1976d2;
+    font-weight: bold;
+}
+
+#homehero {
+    background-image: url('./coast2.jpg');
+}
+
+#yurthero {
+    background-image: url('./yurt.jpg');
+}
+
+#trailhero {
+    background-image: url('./trail.jpg');
+}
+
+.hero {
+    width: auto;
+    max-width: 100%;
+    max-height: 300px;          /* Set a max height to control the image size */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Contact info section */
+#contact {
+    font-size: 0.9em;
+}
+
+table {
+    border: 2px solid #3399CC;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 0.5em;
+    border: 2px solid #3399CC;
+}
+
+td {
+    text-align: center;
+}
+
+.text {
+    text-align: left;
+}
+
+tr:nth-of-type(odd) {
+    background-color: #F5FAFC;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+/* Margin for form elements */
+input,
+textarea {
+    margin-bottom: 0.5em;
+}
+
+@media (min-width: 600px) {
+    nav ul {
+        display: block;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    nav li {
+        border-bottom: none;
+    }
+
+    section {
+        margin-left: 2em;
+        margin-right: 2em;
+        flex: 1;
+    }
+
+    .flow {
+        display: flex;
+        flex-direction: row;
+    }
+    form {
+        display: grid;
+        grid-template-columns: 6em 1fr;
+        gap: 1em;
+        width: 60%;
+        max-width: 30em;
+    }
+
+    input[type="submit"] {
+        grid-column: 2;
+        width: 9em;
+    }
+}
+
+@media (min-width: 1024px) {
+    #wrapper {
+        width: 80%;
+        margin: auto;
+        border: 1px solid #002171;
+        box-shadow: 3px 3px 3px #002171;
+    }
+
+    nav {
+        text-align: left;
+        padding-left: 1em;
+    }
+
+    @supports (display: grid) {
+        nav ul {
+            flex-direction: column;
+            padding-top: 1em;
+        }
+        .hero {
+            grid-area: hero;
+        }
+        header {
+            grid-area: header;
+        }
+        nav {
+            grid-area: nav;
+        }
+        main {
+            grid-area: main;
+        }
+        footer {
+            grid-area: footer;
+        }
+        #wrapper {
+            display:grid;
+            grid-template: 
+            "header header"
+            "nave here"
+            "nav main"
+            "nav footer"
+            / 100px 1fr;
+        }
+    }
+}
